@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas Salgadas</title>
+    <link rel="stylesheet" href="stele.css">
+</head>
+<body>
+<header>
+    <div class="topo">
+        
+        <p class="nome-marca">Pizzaria da Chocho</p>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="salgado.html">Pizzas salgadas</a>
+        <a href="doce.html">Pizzas doces</a>
+        <a href="bebidas.html">Acompanhamentos</a>
+        <a href="promo.html">Promoções</a>
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Pizzas Salgadas</h1>
+
+    <section>
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Pizza</th>
+                <th>Ingredientes</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="mussarela.jpg" alt="Mussarela"></td>
+                <td>Mussarela</td>
+                <td>Molho de tomate, mussarela e orégano</td>
+                <td>R$ 35,00</td>
+                <td><button class="add-btn" onclick="addToCart('Mussarela', 35.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="calabresa.jpg" alt="Calabresa"></td>
+                <td>Calabresa</td>
+                <td>Molho de tomate, calabresa, cebola e orégano</td>
+                <td>R$ 38,00</td>
+                <td><button class="add-btn" onclick="addToCart('Calabresa', 38.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="catupiry.jpg" alt="Frango com catupiry"></td>
+                <td>Frango com catupiry</td>
+                <td>Molho de tomate, frango desfiado e catupiry</td>
+                <td>R$ 40,00</td>
+                <td><button class="add-btn" onclick="addToCart('Frango com catupiry', 40.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="portugesa.jpg" alt="Portuguesa"></td>
+                <td>Portuguesa</td>
+                <td>Presunto, ovos, cebola, ervilha, mussarela e azeitona</td>
+                <td>R$ 42,00</td>
+                <td><button class="add-btn" onclick="addToCart('Portuguesa', 42.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="queijo.jpg" alt="Quatro queijos"></td>
+                <td>Quatro queijos</td>
+                <td>Mussarela, provolone, parmesão e catupiry</td>
+                <td>R$ 44,00</td>
+                <td><button class="add-btn" onclick="addToCart('Quatro queijos', 44.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="cupim.jpg" alt="Cupim Ao Alho"></td>
+                <td>Cupim ao alho</td>
+                <td>Mussarela, carne cupim e alho</td>
+                <td>R$ 50,00</td>
+                <td><button class="add-btn" onclick="addToCart('Cupim ao alho', 50.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="peperoni.jpg" alt="Peperoni"></td>
+                <td>Peperoni</td>
+                <td>Mussarela e fatias de pepperoni</td>
+                <td>R$ 42,00</td>
+                <td><button class="add-btn" onclick="addToCart('Peperoni', 42.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="strogonof.jpg" alt="Strogonoff"></td>
+                <td>Strogonoff</td>
+                <td>Mussarela, strogonoff cremoso com batata palha</td>
+                <td>R$ 37,00</td>
+                <td><button class="add-btn" onclick="addToCart('Strogonoff', 37.00)">Adicionar</button></td>
+            </tr>
+
+        </table>
+    </section>
+</main>
+
+<footer>
+    
+        <div class="info-card">
+            <h3>&#128205; Endereço e Contato</h3>
+            <p><strong>Endereço:</strong><br>Rua das Palmeiras, 245 - Bairro Jardim Primavera<br>Uberlândia - MG</p>
+            <p><strong>Telefone/WhatsApp:</strong><br>(34) 99876-5432</p>
+            <p><strong>E-mail:</strong><br>contato@pizzariadachocho.com.br</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function addToCart(nome, preco) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  carrinho.push({ nome: nome, preco: preco });
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  alert(nome + " adicionado ao carrinho!");
+}
+</script>
+
+</body>
+</html>

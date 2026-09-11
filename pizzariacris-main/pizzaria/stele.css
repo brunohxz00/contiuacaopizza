@@ -1,0 +1,300 @@
+/* ==========================================
+   Pizzaria da Chocho - stele.css
+   Tema: vinho + bege, estilo cardápio
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2e8d5;
+    color: #3b2620;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    background-color: #6b1622;
+    color: #f2e8d5;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 10px 10px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f2e8d5;
+    object-fit: cover;
+}
+
+.nome-marca {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 10px;
+    border-top: 1px solid rgba(242, 232, 213, 0.3);
+}
+
+nav a {
+    color: #f2e8d5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #d4af37;
+    color: #d4af37;
+}
+
+/* ===== MAIN ===== */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #6b1622;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #d4af37;
+    margin: 12px auto 0;
+}
+
+h2 {
+    color: #6b1622;
+    margin-bottom: 12px;
+}
+
+section p {
+    margin-bottom: 14px;
+}
+
+/* ===== CARDÁPIO (tabelas em salgado, doce e bebidas) ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #faf3e3;
+    border: 1px solid #d9c9a3;
+}
+
+table tr:first-child {
+    display: none; /* esconde o cabeçalho "Foto / Item / Descrição / Preço" para visual de cardápio */
+}
+
+table tr {
+    border-bottom: 1px dashed #c9a98f;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+table td {
+    padding: 18px 16px;
+    vertical-align: middle;
+}
+
+.foto-prato {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #6b1622;
+}
+
+/* nome do item (2ª coluna) */
+table td:nth-child(2) {
+    color: #6b1622;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* descrição/ingredientes (3ª coluna) */
+table td:nth-child(3) {
+    color: #5a4438;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* preço (última coluna) */
+table td:last-child {
+    color: #6b1622;
+    font-weight: bold;
+    font-size: 1.15rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ===== PROMOÇÕES ===== */
+
+.combo {
+    background-color: #faf3e3;
+    border: 1px solid #d9c9a3;
+    border-left: 6px solid #6b1622;
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+}
+
+.combo h3 {
+    color: #6b1622;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.combo strong {
+    color: #6b1622;
+}
+
+/* ===== CARRINHO ===== */
+
+.referencia-final {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.foto-referencia {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 3px solid #6b1622;
+    margin-top: 12px;
+}
+
+/* ===== INFO CARDS (horário, pagamento, endereço) ===== */
+
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.info-card {
+    background-color: #faf3e3;
+    border: 1px solid #d9c9a3;
+    border-radius: 6px;
+    padding: 18px 20px;
+    flex: 1;
+    min-width: 220px;
+}
+
+.info-card h3 {
+    color: #6b1622;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.info-card ul {
+    list-style: none;
+}
+
+.info-card li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #d9c9a3;
+}
+
+.info-card li:last-child {
+    border-bottom: none;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #6b1622;
+    color: #f2e8d5;
+    padding: 25px 20px;
+    margin-top: 30px;
+}
+
+footer .info-card {
+    background-color: transparent;
+    border: none;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer .info-card h3 {
+    color: #d4af37;
+}
+
+footer a {
+    color: #d4af37;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 600px) {
+    .nome-marca {
+        font-size: 1.4rem;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    table td:nth-child(2) {
+        white-space: normal;
+    }
+
+    .foto-prato {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.add-btn {
+  background: transparent;
+  border: 1.5px solid #7c2233;
+  color: #7c2233;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.add-btn:hover {
+  background: #7c2233;
+  color: #fff;
+}

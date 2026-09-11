@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas Doces</title>
+    <link rel="stylesheet" href="stele.css">
+</head>
+<body>
+<header>
+    <div class="topo">
+        
+        <p class="nome-marca">Pizzaria da Chocho</p>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="salgado.html">Pizzas salgadas</a>
+        <a href="doce.html">Pizzas doces</a>
+        <a href="bebidas.html">Acompanhamentos</a>
+        <a href="promo.html">Promoções</a>
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Pizzas Doces</h1>
+
+    <section>
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Pizza</th>
+                <th>Ingredientes</th>
+                <th>Preço</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="fantasia.jpg" alt="Chocolate fantasia"></td>
+                <td>Chocolate fantasia</td>
+                <td>Chocolate com confete M&M</td>
+                <td>R$ 38,00</td>
+                <td><button class="add-btn" onclick="addToCart('Chocolate fantasia', 38.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="morango.jpg" alt="Chocolate com morango"></td>
+                <td>Chocolate com morango</td>
+                <td>Chocolate ao leite e morangos fatiados</td>
+                <td>R$ 42,00</td>
+                <td><button class="add-btn" onclick="addToCart('Chocolate com morango', 42.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="banana.jpg" alt="Banana com canela"></td>
+                <td>Banana com canela</td>
+                <td>Banana, leite condensado e canela</td>
+                <td>R$ 36,00</td>
+                <td><button class="add-btn" onclick="addToCart('Banana com canela', 36.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="romeu.jpg" alt="Romeu e Julieta"></td>
+                <td>Romeu e Julieta</td>
+                <td>Goiabada e queijo derretido</td>
+                <td>R$ 38,00</td>
+                <td><button class="add-btn" onclick="addToCart('Romeu e Julieta', 38.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="prestigio.jpg" alt="Prestígio"></td>
+                <td>Prestígio</td>
+                <td>Chocolate ao leite e coco ralado</td>
+                <td>R$ 40,00</td>
+                <td><button class="add-btn" onclick="addToCart('Prestígio', 40.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="kitkat.jpg" alt="Kitkat"></td>
+                <td>Kit Kat</td>
+                <td>Chocolate ao leite e pedaços de kitkat</td>
+                <td>R$ 44,00</td>
+                <td><button class="add-btn" onclick="addToCart('Kit Kat', 44.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="marsh.jpg" alt="Marshmallow"></td>
+                <td>Marshmallow</td>
+                <td>Chocolate ao leite e Marshmallow</td>
+                <td>R$ 40,00</td>
+                <td><button class="add-btn" onclick="addToCart('Marshmallow', 40.00)">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><img class="foto-prato" src="sorvte.jpg" alt="Gelata"></td>
+                <td>Gelata</td>
+                <td>Chocolate ao leite branco ou preto, acompanhado com uma bola de sorvete ou açai</td>
+                <td>R$ 50,00</td>
+                <td><button class="add-btn" onclick="addToCart('Gelata', 50.00)">Adicionar</button></td>
+            </tr>
+        </table>
+    </section>
+</main>
+
+<footer>
+    
+        <div class="info-card">
+            <h3>&#128205; Endereço e Contato</h3>
+            <p><strong>Endereço:</strong><br>Rua das Palmeiras, 245 - Bairro Jardim Primavera<br>Uberlândia - MG</p>
+            <p><strong>Telefone/WhatsApp:</strong><br>(34) 99876-5432</p>
+            <p><strong>E-mail:</strong><br>contato@pizzariadachocho.com.br</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function addToCart(nome, preco) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  carrinho.push({ nome: nome, preco: preco });
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  alert(nome + " adicionado ao carrinho!");
+}
+</script>
+
+
+</body>
+</html>
